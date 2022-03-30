@@ -5,7 +5,7 @@ class Ship():
     def __init__(self, ai_settings, screen):
         self.screen = screen
         self.ai_settings = ai_settings
-        self.image = pygame.image.load('images/ship.bmp')
+        self.image = pygame.image.load('images/ship.png')
         self.rect = self.image.get_rect()
         self.screen_rect = screen.get_rect()
     # Каждый новый корабль появляется у нижнего края экрана.
@@ -23,3 +23,6 @@ class Ship():
     def blitme(self):
     # """Рисует корабль в текущей позиции."""
         self.screen.blit(self.image, self.rect)
+    def center_ship(self):
+# """Размещает корабль в центре нижней стороны."""
+        self.center = self.screen_rect.centerx
